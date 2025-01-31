@@ -19,6 +19,12 @@ const constraints = {
   },
 }
 
+const cameraParamUrl = new URL(
+  new URL("/data/camera_para.dat", import.meta.url),
+  self.location.origin,
+)
+// const cameraParamUrl = "/data/camera_para.dat"
+
 const ARNftContext = createContext({})
 
 const ARNftProvider = ({ children, video, interpolationFactor, arEnabled }) => {
@@ -53,7 +59,7 @@ const ARNftProvider = ({ children, video, interpolationFactor, arEnabled }) => {
         camera.updateProjectionMatrix()
 
         const arnft = new ARNft(
-          "../data/camera_para.dat",
+          cameraParamUrl,
           video.current,
           gl,
           camera,

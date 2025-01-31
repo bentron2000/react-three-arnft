@@ -26,10 +26,28 @@ const browser = (function () {
   }
 })()
 
+// if (browser === "Apple Safari") {
+//   importScripts("./ARToolkitNFT.js")
+// } else {
+//   importScripts("./ARToolkitNFT_simd.js")
+// }
+
 if (browser === "Apple Safari") {
-  importScripts("./ARToolkitNFT.js")
+  importScripts(
+    new URL(
+      new URL("./ARToolkitNFT.js", import.meta.url),
+      self.location.origin,
+    ),
+  )
+  // importScripts("ARToolkitNFT.js");
 } else {
-  importScripts("./ARToolkitNFT_simd.js")
+  importScripts(
+    new URL(
+      new URL("./ARToolkitNFT_simd.js", import.meta.url),
+      self.location.origin,
+    ),
+  )
+  // importScripts("ARToolkitNFT_simd.js");
 }
 
 let arController = null
@@ -65,7 +83,7 @@ async function load(msg) {
   console.log("Setting interpolation factor to: ", msg.interpolationFactor)
 
   try {
-    arController = await ARToolkitNFT.ARControllerNFT.initWithDimensions(
+    arController = await ARControllerNFT.initWithDimensions(
       msg.pw,
       msg.ph,
       msg.cameraParamUrl,
