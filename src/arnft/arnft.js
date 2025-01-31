@@ -30,7 +30,7 @@ export class ARNft {
 
     this.initRenderer()
 
-    this.worker = new Worker(workerScript)
+    this.worker = new Worker(new URL(workerScript, import.meta.url))
     this.worker.onmessage = (e) => this.onWorkerMessage(e)
     this.worker.postMessage({
       type: "load",
