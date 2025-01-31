@@ -26,7 +26,9 @@ export class ARNft {
     this.markers = []
 
     this.canvasProcess = document.createElement("canvas")
-    this.contextProcess = this.canvasProcess.getContext("2d")
+    this.contextProcess = this.canvasProcess.getContext("2d", {
+      willReadFrequently: true,
+    })
 
     this.initRenderer()
 
@@ -134,12 +136,12 @@ export class ARNft {
         break
       }
       case "found": {
-        // console.log("found", msg)
+        console.log("found", JSON.stringify(msg))
         this.onFound(msg)
         break
       }
       case "lost": {
-        // console.log("lost", msg)
+        console.log("lost", JSON.stringify(msg))
         this.onLost(msg)
         break
       }
