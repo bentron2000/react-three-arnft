@@ -2,4 +2,3 @@ node_modules
 dist
 example/cert.pem
 example/key.pem
-lib
