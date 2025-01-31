@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 import { isMobile, setMatrix } from "./utils"
 
-const workerScript = "./js/arnft.worker.js"
+const workerScript = "./worker/arnft.worker.js"
 
 export class ARNft {
   constructor(

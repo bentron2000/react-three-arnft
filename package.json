@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "watch": "babel --watch src --out-dir lib",
-    "build": "babel src --out-dir lib --source-maps"
+    "build": "babel src -d lib && mkdir -p lib/arnft/worker && cp -R node_modules/@webarkit/jsartoolkit-nft/dist/* lib/arnft/worker/",
+    "buildold": "babel src --out-dir lib --source-maps"
   },
   "engines": {
     "node": ">= 16.15.x"
