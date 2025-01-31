@@ -1,22 +1,21 @@
 {
   "name": "react-three-arnft",
-  "version": "0.3.1",
-  "description": "Image tracking with @kalwalt/jsartoolkit-nft and @react-three/fiber",
+  "version": "0.3.7",
+  "description": "Fork of Image tracking with @kalwalt/jsartoolkit-nft and @react-three/fiber",
   "main": "lib/index.js",
   "files": [
     "lib/"
   ],
   "scripts": {
     "watch": "babel --watch src --out-dir lib",
-    "build": "babel src -d lib && mkdir -p lib/arnft/worker && cp -R node_modules/@webarkit/jsartoolkit-nft/dist/* lib/arnft/worker/",
-    "buildold": "babel src --out-dir lib --source-maps"
+    "build": "babel src --out-dir lib --source-maps && mkdir -p lib/arnft/worker && cp -R node_modules/@webarkit/jsartoolkit-nft/dist/* lib/arnft/worker/"
   },
   "engines": {
     "node": ">= 16.15.x"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/j-era/react-three-arnft.git"
+    "url": "git+https://github.com/bentron2000/react-three-arnft.git"
   },
   "keywords": [
     "react",
@@ -29,9 +28,9 @@
   ],
   "license": "LGPL-3.0",
   "bugs": {
-    "url": "https://github.com/j-era/react-three-arnft/issues"
+    "url": "https://github.com/bentron2000/react-three-arnft/issues"
   },
-  "homepage": "https://github.com/j-era/react-three-arnft#readme",
+  "homepage": "https://github.com/bentron2000/react-three-arnft#readme",
   "peerDependencies": {
     "@react-three/fiber": "^8.8.10",
     "@webarkit/jsartoolkit-nft": "^1.1.5",
